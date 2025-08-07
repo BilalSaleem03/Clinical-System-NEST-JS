@@ -12,13 +12,12 @@ export class CalendarService {
   constructor(private readonly patientService : PatientService){}
   private calendar = google.calendar('v3');
 
-  async getEvents(id) {
+  async getEvents() {
     const oauth2Client = new google.auth.OAuth2();
     oauth2Client.setCredentials({
       access_token: process.env.CALENDER_SET_ACCESSTOKEN
     });
 
-    // let accessToken = await this.patientService.getGoogleAccessToken(id)
     
     const res = await this.calendar.events.list({
       calendarId: 'primary',  // User's primary calendar
@@ -52,7 +51,6 @@ export class CalendarService {
         },
       });
       console.log("calenter    :   " , res)
-      //store res.data.id as calendereventid in appointment
       return res.data.id;
     } catch (error) {
       console.error('Google API Error:', error.message);
