@@ -14,6 +14,8 @@ import { ConfigModule } from '@nestjs/config';
 import { EmailModule } from './email/email.module';
 import { CalendarModule } from './calendar/calendar.module';
 import { GoogleAuthModule } from './google-auth/google-auth.module';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 // import envValidation from 'env.validation';
 import envValidation from './env.validation';

@@ -15,7 +15,7 @@ export class CalendarService {
   async getEvents(id) {
     const oauth2Client = new google.auth.OAuth2();
     oauth2Client.setCredentials({
-      access_token: "ya29.A0AS3H6NzMRF7gFpVkHLp7gLe3maEnNBB3_RBG8LQvLK1z0WVfIf5FDDrrXzyOlmZN_EKT3XWnDQhyDgNl8SATBRnf7bIQ1phVZbyJxj3oa1gcbP5igwvXzd4vwk3k7ctKjuXeQ1XQ-YYKXkHRgiwpcfg0EjiisxaSwVJRO0JeaAa65fhUOO5EKn8HmPVGToCvUQey0FMaCgYKARMSARESFQHGX2MisGMgofnM44keQzOryXvNRQ0206", // Correct way to set the token
+      access_token: process.env.CALENDER_SET_ACCESSTOKEN
     });
 
     // let accessToken = await this.patientService.getGoogleAccessToken(id)
